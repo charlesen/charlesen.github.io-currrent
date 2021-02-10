@@ -27,7 +27,7 @@
         <p>
             Vous allez être redirigé vers mon CV dans 20 secondes :
             <strong>
-                <span id="countdown">0</span> sec...
+                <span id="countdown">0 s</span> ...
             </strong>
         </p>
     </section>
@@ -37,12 +37,12 @@
 
         let objInterval = setInterval(function () {
             countdown++;
-            if (countdown >= 20) {
+            if (countdown === 20) {
                 document.querySelector('#countdown').textContent = 'GO !';
                 document.location = 'https://charlesen.fr/mon-cv/';
                 clearInterval(objInterval);
             } else {
-                document.querySelector('#countdown').textContent = countdown;
+                document.querySelector('#countdown').textContent = `${countdown} s`;
             }
         }, 1000);
     </script>
