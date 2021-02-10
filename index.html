@@ -25,7 +25,7 @@
             Je m'appelle Charles EDOU NZE, formateur et développeur web depuis plus de 10 ans.
         </p>
         <p>
-            Vous allez être redirigé vers mon CV dans 15 secondes :
+            Vous allez être redirigé vers mon CV dans 20 secondes :
             <strong>
                 <span id="countdown">0</span> sec...
             </strong>
@@ -36,12 +36,14 @@
         let countdown = 0;
 
         let objInterval = setInterval(function () {
-            if (countdown === 15) {
+            countdown++;
+            if (countdown >= 20) {
                 document.querySelector('#countdown').textContent = 'GO !';
                 document.location = 'https://charlesen.fr/mon-cv/';
+                clearInterval(objInterval);
+            } else {
+                document.querySelector('#countdown').textContent = countdown;
             }
-            countdown++;
-            document.querySelector('#countdown').textContent = countdown;
         }, 1000);
     </script>
 </body>
