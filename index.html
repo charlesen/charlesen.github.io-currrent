@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="10;URL=https://charlesen.fr/mon-cv/">
     <title>Page personnelle de Charles EDOU NZE</title>
     <style>
         body {
@@ -17,13 +16,34 @@
 </head>
 
 <body>
-    <h1>Bienvenue sur mon espace personnel</h1>
-    <p>
-        Je m'appelle Charles EDOU NZE, formateur et développeur web depuis plus de 10 ans.
-    </p>
-    <p>
-        Vous allez être redirigé vers mon CV dans quelques secondes...
-    </p>
+    <main>
+        <h1>Bienvenue sur mon espace personnel</h1>
+    </main>
+
+    <section>
+        <p>
+            Je m'appelle Charles EDOU NZE, formateur et développeur web depuis plus de 10 ans.
+        </p>
+        <p>
+            Vous allez être redirigé vers mon CV dans 15 secondes :
+            <strong>
+                <span id="countdown">0</span> sec...
+            </strong>
+        </p>
+    </section>
+
+    <script>
+        let countdown = 0;
+
+        let objInterval = setInterval(function () {
+            if (countdown === 15) {
+                document.querySelector('#countdown').textContent = 'GO !';
+                document.location = 'https://charlesen.fr/mon-cv/';
+            }
+            countdown++;
+            document.querySelector('#countdown').textContent = countdown;
+        }, 1000);
+    </script>
 </body>
 
 </html>
